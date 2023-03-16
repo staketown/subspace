@@ -28,7 +28,7 @@ User=$USER
 ExecStart=$(which subspace-cli) farm --verbose
 Restart=on-failure
 RestartSec=10
-LimitNOFILE=10000
+LimitNOFILE=1000000
 [Install]
 WantedBy=multi-user.target
 EOF
