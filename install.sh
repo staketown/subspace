@@ -12,7 +12,7 @@ sudo mv subspace-cli /usr/local/bin/
 sudo rm -rf $HOME/.config/subspace-cli
 
 echo "alias subspace-cli='/usr/local/bin/subspace-cli'" >> $HOME/.bashrc
-source $HOME/.bashrc
+touch $HOME/.bash_profile && source $HOME/.bashrc && sleep 1
 
 subspace-cli init
 
