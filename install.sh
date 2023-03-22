@@ -14,13 +14,13 @@ do
         "${options[0]}")
             echo "$selected $opt"
             sleep 1
-            install
+            installNode
             break
             ;;
         "${options[1]}")
             echo "$selected $opt"
             sleep 1
-            update
+            updateNode
             break
             ;;
         "${options[2]}")
@@ -31,7 +31,7 @@ do
     esac
 done
 
-function install {
+function installNode {
   sudo apt update && sudo apt install curl ocl-icd-opencl-dev libopencl-clang-dev libgomp1 -y
   cd $HOME || exit
   wget -O subspace-cli https://github.com/subspace/subspace-cli/releases/download/v0.1.10-alpha/subspace-cli-Ubuntu-x86_64-v3-v0.1.10-alpha
@@ -73,7 +73,7 @@ EOF
   fi
 }
 
-function update {
+function updateNode {
     sudo systemctl stop subspaced
 
     cd $HOME || exit
