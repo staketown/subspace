@@ -10,7 +10,7 @@ selected="You choose the option"
 
 function installNode {
   sudo apt update && sudo apt install curl ocl-icd-opencl-dev libopencl-clang-dev libgomp1 -y
-  cd $HOME || exit
+  cd $HOME || return
   wget -O subspace-cli https://github.com/subspace/subspace-cli/releases/download/v0.1.10-alpha/subspace-cli-Ubuntu-x86_64-v3-v0.1.10-alpha
   sudo chmod +x subspace-cli
   sudo mv subspace-cli /usr/local/bin/
@@ -53,7 +53,7 @@ EOF
 function updateNode {
     sudo systemctl stop subspaced
 
-    cd $HOME || exit
+    cd $HOME || return
     wget -O subspace-cli https://github.com/subspace/subspace-cli/releases/download/v0.1.10-alpha/subspace-cli-Ubuntu-x86_64-v3-v0.1.10-alpha
     sudo chmod +x subspace-cli
     sudo mv subspace-cli /usr/local/bin/
