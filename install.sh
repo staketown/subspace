@@ -8,29 +8,6 @@ PS3='Enter your option: '
 options=("Install node" "Update node")
 selected="You choose the option"
 
-select opt in "${options[@]}"
-do
-    case $opt in
-        "${options[0]}")
-            echo "$selected $opt"
-            sleep 1
-            installNode
-            break
-            ;;
-        "${options[1]}")
-            echo "$selected $opt"
-            sleep 1
-            updateNode
-            break
-            ;;
-        "${options[2]}")
-			echo "$selected $opt"
-            break
-            ;;
-        *) echo "unknown option $REPLY";;
-    esac
-done
-
 function installNode {
   sudo apt update && sudo apt install curl ocl-icd-opencl-dev libopencl-clang-dev libgomp1 -y
   cd $HOME || exit
@@ -92,3 +69,26 @@ function updateNode {
           printGreen "Your node hasn't been updated correctly."
       fi
 }
+
+select opt in "${options[@]}"
+do
+    case $opt in
+        "${options[0]}")
+            echo "$selected $opt"
+            sleep 1
+            installNode
+            break
+            ;;
+        "${options[1]}")
+            echo "$selected $opt"
+            sleep 1
+            updateNode
+            break
+            ;;
+        "${options[2]}")
+			echo "$selected $opt"
+            break
+            ;;
+        *) echo "unknown option $REPLY";;
+    esac
+done
