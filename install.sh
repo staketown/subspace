@@ -4,6 +4,8 @@ source <(curl -s https://raw.githubusercontent.com/R1M-NODES/utils/master/common
 
 printLogo
 
+URL=https://github.com/subspace/subspace-cli/releases/download/v0.1.12/subspace-cli-Ubuntu-x86_64-v3-v0.1.12
+
 PS3='Enter your option: '
 options=("Install node" "Update node")
 selected="You choose the option"
@@ -11,7 +13,7 @@ selected="You choose the option"
 function installNode {
   sudo apt update && sudo apt install curl ocl-icd-opencl-dev libopencl-clang-dev libgomp1 -y
   cd $HOME || return
-  wget -O subspace-cli https://github.com/subspace/subspace-cli/releases/download/v0.1.10-alpha/subspace-cli-Ubuntu-x86_64-v3-v0.1.10-alpha
+  wget -O subspace-cli $URL
   sudo chmod +x subspace-cli
   sudo mv subspace-cli /usr/local/bin/
   sudo rm -rf $HOME/.config/subspace-cli
@@ -54,7 +56,7 @@ function updateNode {
     sudo systemctl stop subspaced
 
     cd $HOME || return
-    wget -O subspace-cli https://github.com/subspace/subspace-cli/releases/download/v0.1.10-alpha/subspace-cli-Ubuntu-x86_64-v3-v0.1.10-alpha
+    wget -O subspace-cli $URL
     sudo chmod +x subspace-cli
     sudo rm /usr/local/bin/subspace-cli
     sudo mv subspace-cli /usr/local/bin/
