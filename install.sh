@@ -16,12 +16,11 @@ VERSION=$(echo 'BEGIN {
 
 if [[ $VERSION -ne 2 && $VERSION -ne 3 ]]
   then
-    echo  "Your processor doesn't support subspace"
+    printGreen "Our script doesn't support your processor"
     exit
 fi
 
 URL=https://github.com/subspace/subspace-cli/releases/download/v0.1.12/subspace-cli-Ubuntu-x86_64-v${VERSION}-v0.1.12
-
 PS3='Enter your option: '
 options=("Install node" "Update node")
 selected="You choose the option"
