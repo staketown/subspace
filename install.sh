@@ -68,6 +68,10 @@ EOF
 }
 
 function updateNode {
+
+    printGreen "Nothing to update!"
+    exit 1
+
     sudo systemctl stop subspaced
 
     cd $HOME || return
