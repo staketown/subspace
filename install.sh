@@ -20,7 +20,7 @@ if [[ $VERSION -ne 2 && $VERSION -ne 3 ]]
     exit
 fi
 
-URL=https://github.com/subspace/subspace-cli/releases/download/v0.1.12/subspace-cli-Ubuntu-x86_64-v${VERSION}-v0.1.12
+URL=https://github.com/subspace/subspace-cli/releases/download/v0.3.3-alpha/subspace-cli-ubuntu-x86_64-v${VERSION}-v0.3.3-alpha
 PS3='Enter your option: '
 options=("Install node" "Update node")
 selected="You choose the option"
